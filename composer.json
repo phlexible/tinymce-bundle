@@ -1,0 +1,21 @@
+{
+    "name": "phlexible/tinymce-component",
+    "description": "phlexible.cms tinymce component",
+    "license": "proprietary",
+    "autoload": {
+        "psr-0": { 
+            "Makeweb_TinyMce_": ""
+        }
+    },
+    "target-dir": "Makeweb/TinyMce",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.phlexible.net/v1/"
+        }
+    ],
+    "minimum-stability": "stable"
+}

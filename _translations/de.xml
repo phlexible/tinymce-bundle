@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="http://www.phlexible.net/schemas/1.0/t9n.xsd">
+  <page id="tinymce" lang="de" section="backend" namespace="makeweb">
+    <item key="component_name">TinyMCE Editor</item>
+    <item key="component_description">TinyMCE editor, Version 3.4.9</item>
+  </page>
+</translations>
