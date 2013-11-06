@@ -25,11 +25,11 @@ class Makeweb_TinyMce_Component extends MWF_Component_Abstract
      */
     public function __construct()
     {
-        $this->setVersion('0.7.0');
-        $this->setId('tinymce');
-        $this->setFile(__FILE__);
-        $this->setPackage('makeweb');
-        $this->setOrder('after fields');
+        $this
+            ->setVersion('0.7.0')
+            ->setId('tinymce')
+            ->setFile(__FILE__)
+            ->setPackage('makeweb');
     }
 
     public function initContainer(MWF_Container_ContainerBuilder $container, array $configs)
