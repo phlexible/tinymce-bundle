@@ -3,13 +3,13 @@
     "description": "phlexible.cms tinymce component",
     "license": "proprietary",
     "autoload": {
-        "psr-0": { 
-            "Makeweb_TinyMce_": ""
+        "psr-4": {
+            "Phlexible\\TinymceComponent\\": ""
         }
     },
-    "target-dir": "Makeweb/TinyMce",
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "phlexible/cms": "*"
     },
     "repositories": [
         {

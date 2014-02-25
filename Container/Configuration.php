@@ -1,10 +1,26 @@
 <?php
+/**
+ * phlexible
+ *
+ * @copyright 2007-2013 brainbits GmbH (http://www.brainbits.net)
+ * @license   proprietary
+ */
 
-class Makeweb_TinyMce_Container_Configuration implements Symfony\Component\Config\Definition\ConfigurationInterface
+namespace Phlexible\TinymceComponent\Container;
+
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
+
+/**
+ * TinyMCe Configuration
+ *
+ * @author Stephan Wentz <sw@brainbits.net>
+ */
+class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new Symfony\Component\Config\Definition\Builder\TreeBuilder();
+        $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('tinymce');
 
         /*

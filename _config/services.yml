@@ -1,0 +1,21 @@
+parameters:
+    tinymce.settings: ~
+    tinymce.setup: ~
+
+tags:
+    - ["asset.translation", {namespace: "Phlexible.strings.Tinymce", page: tinymce}]
+
+services:
+    # listeners
+    tinymceListenerViewDefault:
+        class: Phlexible\TinymceComponent\Listener\ViewFrameListener
+        arguments: ["%app.debug%", "%tinymce.settings%", "%tinymce.setup%"]
+        tags:
+            - ["event.listener", {event: frame.view_frame, method: onViewFrame}]
+
+    # assets
+    indexerAssetScripts:
+        class: Phlexible\TinymceComponent\Asset\ScriptCollection
+        arguments: ["%tinymce.asset.script_path%/"]
+        tags:
+            - ["asset.script"]

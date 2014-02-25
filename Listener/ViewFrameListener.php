@@ -1,37 +1,64 @@
 <?php
 /**
- * MAKEweb
+ * phlexible
  *
- * PHP Version 5
- *
- * @category    Makeweb
- * @package     Makeweb_TinyMce
- * @copyright   2010 brainbits GmbH (http://www.brainbits.net)
+ * @copyright 2007-2013 brainbits GmbH (http://www.brainbits.net)
+ * @license   proprietary
  */
 
+namespace Phlexible\TinymceComponent\Listener;
+
+use Phlexible\FrameComponent\Event\ViewFrameEvent;
+
 /**
- * TinyMce
+ * View frame listener
  *
- * @category    Makeweb
- * @package     Makeweb_TinyMce
- * @author      Stephan Wentz <sw@brainbits.net>
- * @copyright   2010 brainbits GmbH (http://www.brainbits.net)
+ * @author Stephan Wentz <sw@brainbits.net>
  */
-class Makeweb_TinyMce_Callback
+class ViewFrameListener
 {
-    public static function callViewDefault(MWF_Core_Frame_Event_ViewFrame $event, array $params = array())
+    /**
+     * @var boolean
+     */
+    private $debug;
+
+    /**
+     * @var string
+     */
+    private $tinymceSettings;
+
+    /**
+     * @var string
+     */
+    private $tinymceSetup;
+
+    /**
+     * @param boolean $debug
+     * @param string  $tinymceSettings
+     * @param string  $tinymceSetup
+     */
+    public function __construct($debug, $tinymceSettings, $tinymceSetup)
+    {
+        $this->debug = $debug;
+        $this->tinymceSettings = $tinymceSettings;
+        $this->tinymceSetup = $tinymceSetup;
+    }
+
+    /**
+     * @param ViewFrameEvent $event
+     */
+    public function onViewFrame(ViewFrameEvent $event)
     {
         $view = $event->getView();
 
-        $container = $params['container'];
         $setup = '';
-        if ($container->getParam(':tinymce.settings'))
+        if ($this->tinymceSettings)
         {
-            $settings = $container->getParam(':tinymce.settings');
+            $settings = $this->tinymceSettings;
 
-            if ($container->getParam(':tinymce.setup'))
+            if ($this->tinymceSetup)
             {
-                $setup = $container->getParam(':tinymce.setup');
+                $setup = $this->tinymceSetup;
             }
         }
         else
@@ -52,13 +79,13 @@ class Makeweb_TinyMce_Callback
             );
         }
 
-        $script = 'var tinymceSettings = ' . Zend_Json::encode($settings). ';' . PHP_EOL;
+        $script = 'var tinymceSettings = ' . json_encode($settings). ';' . PHP_EOL;
         if ($setup) {
             $script .= 'tinymceSettings.setup = ' . $setup . ';' . PHP_EOL;
         }
 
         $view
-            ->addScript($event->getRequest()->getBasePath() . '/components/tinymce/scripts/tinymce/tiny_mce' . (MWF_Env::isDebug() ? '_src' : '') . '.js')
+            ->addScript($event->getRequest()->getBasePath() . '/components/tinymce/scripts/tinymce/tiny_mce' . ($this->debug ? '_src' : '') . '.js')
             ->addInlineScript($script);
     }
 }

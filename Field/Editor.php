@@ -1,24 +1,21 @@
 <?php
 /**
- * MAKEweb
+ * phlexible
  *
- * PHP Version 5
- *
- * @category    MAKEweb
- * @package     Makeweb_TinyMce
- * @copyright   2007 brainbits GmbH (http://www.brainbits.net)
- * @version     SVN: $Id: Exception.php 2943 2007-04-18 09:00:40Z swentz $
+ * @copyright 2007-2013 brainbits GmbH (http://www.brainbits.net)
+ * @license   proprietary
  */
 
+namespace Phlexible\TinymceComponent\Field;
+
+use Phlexible\ElementtypesComponent\Field\TextareaField;
+
 /**
- * Editor Field
+ * Tiny MCE field
  *
- * @category    MAKEweb
- * @package     Makeweb_TinyMce
- * @author      Stephan Wentz <sw@brainbits.net>
- * @copyright   2007 brainbits GmbH (http://www.brainbits.net)
+ * @author Stephan Wentz <sw@brainbits.net>
  */
-class Makeweb_TinyMce_Field_Editor extends Makeweb_Fields_Field_Textarea
+class EditorField extends TextareaField
 {
     const TYPE = 'editor';
     public $icon = 'm-fields-field_editor-icon';

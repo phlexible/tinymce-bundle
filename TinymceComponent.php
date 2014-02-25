@@ -1,0 +1,36 @@
+<?php
+/**
+ * phlexible
+ *
+ * @copyright 2007-2013 brainbits GmbH (http://www.brainbits.net)
+ * @license   proprietary
+ */
+
+namespace Phlexible\TinymceComponent;
+
+use Phlexible\Component\AbstractComponent;
+
+/**
+ * TinyMce Component
+ *
+ * @author Stephan Wentz <sw@brainbits.net>
+ */
+class TinymceComponent extends AbstractComponent
+{
+    public function __construct()
+    {
+        $this
+            ->setVersion('0.7.0')
+            ->setId('tinymce')
+            ->setPackage('phlexible');
+    }
+
+    public function getFields()
+    {
+        $fields = array(
+            'editor' => 'Makeweb_TinyMce_Field_Editor'
+        );
+
+        return $fields;
+    }
+}
