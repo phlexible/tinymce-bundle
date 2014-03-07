@@ -75,7 +75,7 @@
                                     if (!tid) return;
 
                                     Ext.Ajax.request({
-                                        url: MWF.baseUrl + '/tinymce/data/link/tid/' + href,
+                                        url: Phlexible.baseUrl + '/tinymce/data/link/tid/' + href,
                                         success: function(response) {
                                             var result = Ext.decode(response.responseText);
 

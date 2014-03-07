@@ -7,7 +7,7 @@ var templates = {
 };
 
 function showPhlexibleLinkWindow() {
-    var w = new parent.Makeweb.tinymce.LinkWindow({
+    var w = new parent.Phlexible.tinymce.LinkWindow({
         submitParams: {
             siteroot_id: '48ef589f-2ddc-4cb6-9a54-7e0dc0a8005b'
         },

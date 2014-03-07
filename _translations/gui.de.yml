@@ -1,0 +1,3 @@
+tinymce:
+    component_name: 'TinyMCE Editor'
+    component_description: 'TinyMCE editor, Version 3.4.9'

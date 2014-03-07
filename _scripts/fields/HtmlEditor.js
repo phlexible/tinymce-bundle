@@ -1,4 +1,4 @@
-Makeweb.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
+Phlexible.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
     hideMode: 'offsets',
 
     removeControl: function() {
@@ -27,17 +27,17 @@ Makeweb.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
 
     // private
     onRender : function(ct, position){
-        Makeweb.fields.HtmlEditor.superclass.onRender.call(this, ct, position);
+        Phlexible.fields.HtmlEditor.superclass.onRender.call(this, ct, position);
 
-        Makeweb.fields.FieldHelper.prefix.call(this);
-        Makeweb.fields.FieldHelper.suffix.call(this);
-        //Makeweb.fields.FieldHelper.diff.call(this);
-        Makeweb.fields.FieldHelper['synchronized'].call(this);
+        Phlexible.fields.FieldHelper.prefix.call(this);
+        Phlexible.fields.FieldHelper.suffix.call(this);
+        //Phlexible.fields.FieldHelper.diff.call(this);
+        Phlexible.fields.FieldHelper['synchronized'].call(this);
 
         if (this.element && this.diff) {
             var targetEl = this.el;
             this.ed.onClick.add(function(ed, e) {
-                MWF.console.log(arguments);
+                Phlexible.console.log(arguments);
                 if (this.element.activeDiffEl && this.element.activeDiffEl.isVisible()) { // && !e.within(targetEl.dom, false, true) && !e.within(this.element.activeDiffEl.dom, false, true)){
                     this.element.activeDiffEl.hide();
                     this.element.activeDiffEl = null;
@@ -50,7 +50,7 @@ Makeweb.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
                         html = this.diff.content_diff;
                     }
                     else {
-                        html = Makeweb.strings.Fields.diff_new_field;
+                        html = Phlexible.fields.Strings.diff_new_field;
                         height = 14;
                     }
 
@@ -92,18 +92,18 @@ Makeweb.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
           false;
 
         //plugins: "safari,style,layer,table,advimage,advlink,iespell,insertdatetime,preview,media,searchreplace,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
-        var tinymceSettings = MWF.clone(window.tinymceSettings);
+        var tinymceSettings = Phlexible.clone(window.tinymceSettings);
 
 
         if (item.diff) {
 
             switch (item.diff.type) {
                 case 'change':
-                    tinymceSettings.content_css = MWF.baseUrl + '/tinymce/content_css/change';
+                    tinymceSettings.content_css = Phlexible.baseUrl + '/tinymce/content_css/change';
                     break;
 
                 case 'new':
-                    tinymceSettings.content_css = MWF.baseUrl + '/tinymce/content_css/new';
+                    tinymceSettings.content_css = Phlexible.baseUrl + '/tinymce/content_css/new';
                     break;
             }
         }
@@ -127,7 +127,7 @@ Makeweb.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
         tinymceSettings.readonly = tinymceReadonly;
         tinymceSettings.phlx_element = element;
 
-        var config = Makeweb.fields.FieldHelper.defaults(formItem, item, element, repeatable_postfix, forceAdd);
+        var config = Phlexible.fields.FieldHelper.defaults(formItem, item, element, repeatable_postfix, forceAdd);
 
         Ext.apply(config, {
             tinymceSettings: tinymceSettings,
@@ -135,7 +135,7 @@ Makeweb.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
             height: parseInt(item.configuration.height, 10) || 300
         });
 
-        var newItem = new Makeweb.fields.HtmlEditor(config);
+        var newItem = new Phlexible.fields.HtmlEditor(config);
 
         newItem.on('render', newItem.disableAfterRender);
 
@@ -148,9 +148,9 @@ Makeweb.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
 
 });
 
-Makeweb.fields.Registry.addFactory('editor', Makeweb.fields.HtmlEditor.prototype.addField);
+Phlexible.fields.Registry.addFactory('editor', Phlexible.fields.HtmlEditor.prototype.addField);
 
-Makeweb.fields.FieldTypes.addField('editor', {
+Phlexible.fields.FieldTypes.addField('editor', {
     titles: {
         de: 'Editor',
         en: 'Editor'
