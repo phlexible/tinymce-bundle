@@ -5,18 +5,24 @@
  * @copyright 2007-2013 brainbits GmbH (http://www.brainbits.net)
  * @license   proprietary
  */
+namespace Phlexible\TinymceComponent\Controller;
+
+use Phlexible\CoreComponent\Controller\Action\Action;
 
 /**
  * Data controller
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-final class DataController extends MWF_Controller_Action
+final class DataController extends Action
 {
+    /**
+     * Link action
+     */
     public function linkAction()
     {
-        $tid = $this->_getParam('tid');
-        $language = $this->_getParam('language', 'en');
+        $tid = $this->getParam('tid');
+        $language = $this->getParam('language', 'en');
 
         $container = $this->getContainer();
         $treeManager = $container->elementsTreeManager;

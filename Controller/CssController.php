@@ -6,6 +6,8 @@
  * @license   proprietary
  */
 
+namespace Phlexible\TinymceComponent\Controller;
+
 use Phlexible\CoreComponent\Controller\Action\Action;
 
 /**
@@ -15,6 +17,9 @@ use Phlexible\CoreComponent\Controller\Action\Action;
  */
 class CssController extends Action
 {
+    /**
+     * New action
+     */
     public function newAction()
     {
         $this->_response
@@ -22,6 +27,9 @@ class CssController extends Action
             ->setBody('body {background: none #FBB !important;}');
     }
 
+    /**
+     * Change action
+     */
     public function changeAction()
     {
         $this->_response
