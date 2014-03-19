@@ -8,14 +8,14 @@
 
 namespace Phlexible\TinymceComponent;
 
-use Phlexible\Component\AbstractComponent;
+use Phlexible\Component\Component;
 
 /**
  * TinyMce Component
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class TinymceComponent extends AbstractComponent
+class TinymceComponent extends Component
 {
     public function __construct()
     {
