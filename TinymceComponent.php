@@ -24,13 +24,4 @@ class TinymceComponent extends Component
             ->setId('tinymce')
             ->setPackage('phlexible');
     }
-
-    public function getFields()
-    {
-        $fields = array(
-            'editor' => 'Makeweb_TinyMce_Field_Editor'
-        );
-
-        return $fields;
-    }
 }

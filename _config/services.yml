@@ -2,10 +2,12 @@ parameters:
     tinymce.settings: ~
     tinymce.setup: ~
 
-tags:
-    - ["asset.translation", {namespace: "Phlexible.strings.Tinymce", page: tinymce}]
-
 services:
+    # fields
+    tinymceFieldEditor:
+        class: Phlexible\TinymceComponent\Field\EditorField
+        tags:
+            - ["elementtypes.field", {alias: editor}]
     # listeners
     tinymceListenerViewDefault:
         class: Phlexible\TinymceComponent\Listener\ViewFrameListener
