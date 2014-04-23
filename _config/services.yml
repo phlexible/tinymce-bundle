@@ -16,7 +16,7 @@ services:
             - ["event.listener", {event: frame.view_frame, method: onViewFrame}]
 
     # assets
-    indexerAssetScripts:
+    tinymceAssetScripts:
         class: Phlexible\TinymceComponent\Asset\ScriptCollection
         arguments: ["%tinymce.asset.script_path%/"]
         tags:

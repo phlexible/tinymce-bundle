@@ -8,7 +8,7 @@
 
 namespace Phlexible\TinymceComponent\Listener;
 
-use Phlexible\FrameComponent\Event\ViewFrameEvent;
+use Phlexible\FrameComponent\Event\ViewEvent;
 
 /**
  * View frame listener
@@ -45,9 +45,9 @@ class ViewFrameListener
     }
 
     /**
-     * @param ViewFrameEvent $event
+     * @param ViewEvent $event
      */
-    public function onViewFrame(ViewFrameEvent $event)
+    public function onViewFrame(ViewEvent $event)
     {
         $view = $event->getView();
 

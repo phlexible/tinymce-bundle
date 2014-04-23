@@ -12,19 +12,6 @@ Phlexible.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
         this.createEditor(this.textareaEl.id);
     },
 
-    disableAfterRender: function(field) {
-        if (this.isVariantMaster && this.isVariantField) {
-            this.ed.onPostRender.add(function(ed, controlManager){
-                this.ed.getWin().document.body.style.backgroundColor = '#D3DEFF';
-            }.createDelegate(field));
-        }
-        else if (this.isVariant && !this.isVariantField) {
-            this.ed.onPostRender.add(function(ed, controlManager){
-                this.ed.getWin().document.body.style.backgroundColor = '#FFE0E0';
-            }.createDelegate(field));
-        }
-    },
-
     // private
     onRender : function(ct, position){
         Phlexible.fields.HtmlEditor.superclass.onRender.call(this, ct, position);
@@ -80,16 +67,10 @@ Phlexible.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
 
         element.prototypes.incCount(item.ds_id);
 
-        var isVariantMaster = element.properties.variant_master;
-        var isVariant = element.properties.variant;
-        var isVariantField = item.variant_field;
         var isMaster = element.master;
         var isSynchronized = (item.configuration['synchronized'] === 'synchronized' || item.configuration['synchronized'] === 'synchronized_unlink');
 
-        var tinymceReadonly = /*(isVariantMaster && isVariantField) ||*/
-          (isVariant && !isVariantField) ||
-          (isSynchronized && !isMaster) ||
-          false;
+        var tinymceReadonly = (isSynchronized && !isMaster) || false;
 
         //plugins: "safari,style,layer,table,advimage,advlink,iespell,insertdatetime,preview,media,searchreplace,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
         var tinymceSettings = Phlexible.clone(window.tinymceSettings);
@@ -99,11 +80,11 @@ Phlexible.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
 
             switch (item.diff.type) {
                 case 'change':
-                    tinymceSettings.content_css = Phlexible.baseUrl + '/tinymce/content_css/change';
+                    tinymceSettings.content_css = Phlexible.Router.generate('tiymce_contentcss_change');
                     break;
 
                 case 'new':
-                    tinymceSettings.content_css = Phlexible.baseUrl + '/tinymce/content_css/new';
+                    tinymceSettings.content_css = Phlexible.Router.generate('tiymce_contentcss_new');
                     break;
             }
         }
@@ -136,8 +117,6 @@ Phlexible.fields.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
         });
 
         var newItem = new Phlexible.fields.HtmlEditor(config);
-
-        newItem.on('render', newItem.disableAfterRender);
 
         if(!pos) {
             formItem.add(newItem);
