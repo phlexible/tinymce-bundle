@@ -135,7 +135,7 @@ Phlexible.fields.FieldTypes.addField('editor', {
         en: 'Editor'
     },
     allowedIn: ['tab','accordion','group','referenceroot'],
-    iconCls: 'm-fields-field_editor-icon',
+    iconCls: 'p-tinymce-field_editor-icon',
     accordions: ['fieldproperties','fieldlabels','fieldconfiguration','fieldvalues','fieldvalidation'],
     defaultValueField: 'default_value_textarea',
     config: {

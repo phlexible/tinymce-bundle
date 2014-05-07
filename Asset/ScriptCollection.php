@@ -25,7 +25,10 @@ class ScriptCollection extends AssetCollection
     {
         $assets = array(
             new FileAsset($scriptDir . 'Ext.ux.TinyMCE.js'),
+
+            new FileAsset($scriptDir . 'Definitions.js'),
             new FileAsset($scriptDir . 'fields/HtmlEditor.js'),
+            new FileAsset($scriptDir . 'fields/FieldTinymceAccordion.js'),
         );
 
         parent::__construct($assets);
