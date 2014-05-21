@@ -80,4 +80,4 @@ Phlexible.elementtypes.FieldTinymceAccordion = Ext.extend(Ext.FormPanel, {
     }
 });
 
-Ext.reg('elementtypes-field-tinymce', Phlexible.elementtypes.FieldTinymceAccordion);
+Ext.reg('tinymce-field-tinymce', Phlexible.elementtypes.FieldTinymceAccordion);
