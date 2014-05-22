@@ -1,11 +1,9 @@
 Ext.ns('Phlexible.tinymce');
 
-Phlexible.elementtypes.ElementtypeField.prototype.initMyItems =
-    Phlexible.elementtypes.ElementtypeField.prototype.initMyItems.createSequence(function() {
+Phlexible.elementtypes.configuration.FieldConfiguration.prototype.initMyItems =
+	Phlexible.elementtypes.configuration.FieldConfiguration.prototype.initMyItems.createSequence(function() {
         this.items.push({
-            xtype: 'tinymce-field-tinymce',
-            hidden: true,
-            isFieldAccordion: true,
-            key: 'configuration'
+            xtype: 'tinymce-configuration-field-configuration-tinymce',
+			additional: true
         });
     });

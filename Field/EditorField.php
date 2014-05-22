@@ -18,5 +18,5 @@ use Phlexible\ElementtypesComponent\Field\TextareaField;
 class EditorField extends TextareaField
 {
     const TYPE = 'editor';
-    public $icon = 'm-fields-field_editor-icon';
+    public $icon = 'p-tinymce-field_editor-icon';
 }

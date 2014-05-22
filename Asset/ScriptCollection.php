@@ -27,7 +27,9 @@ class ScriptCollection extends AssetCollection
             new FileAsset($scriptDir . 'ux/Ext.ux.TinyMCE.js'),
 
             new FileAsset($scriptDir . 'Definitions.js'),
-            new FileAsset($scriptDir . 'FieldTinymceAccordion.js'),
+
+            new FileAsset($scriptDir . 'configuration/FieldConfigurationTinymce.js'),
+
             new FileAsset($scriptDir . 'fields/HtmlEditor.js'),
         );
 

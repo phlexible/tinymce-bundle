@@ -62,7 +62,7 @@ Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valu
 		element.prototypes.addFieldPrototype(item);
 	}
 
-	element.prototypes.incCount(item.ds_id);
+	element.prototypes.incCount(item.dsId);
 
 	var isMaster = element.master;
 	var isSynchronized = (item.configuration['synchronized'] === 'synchronized' || item.configuration['synchronized'] === 'synchronized_unlink');
@@ -70,11 +70,11 @@ Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valu
 	var tinymceReadonly = (isSynchronized && !isMaster) || false;
 
 	//plugins: "safari,style,layer,table,advimage,advlink,iespell,insertdatetime,preview,media,searchreplace,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
-	var tinymceSettings = Phlexible.clone(window.tinymceSettings);
-
+	var tinymceSettings = item.configuration.tinymce_config_override && item.configuration.tinymce_config
+		? Ext.decode(item.configuration.tinymce_config)
+		: Phlexible.clone(window.tinymceSettings);
 
 	if (item.diff) {
-
 		switch (item.diff.type) {
 			case 'change':
 				tinymceSettings.content_css = Phlexible.Router.generate('tiymce_contentcss_change');

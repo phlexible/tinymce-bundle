@@ -1,0 +1,6 @@
+tinymce:
+    add: Hinzufügen
+    rename: Umbenennen
+    remove: Entfernen
+    override_default_config: Standardkonfiguration überschreiben
+    preview: Vorschau
