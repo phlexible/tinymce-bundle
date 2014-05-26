@@ -18,7 +18,7 @@ use Phlexible\FrameComponent\Event\ViewEvent;
 class ViewFrameListener
 {
     /**
-     * @var boolean
+     * @var bool
      */
     private $debug;
 
@@ -33,9 +33,9 @@ class ViewFrameListener
     private $tinymceSetup;
 
     /**
-     * @param boolean $debug
-     * @param string  $tinymceSettings
-     * @param string  $tinymceSetup
+     * @param bool   $debug
+     * @param string $tinymceSettings
+     * @param string $tinymceSetup
      */
     public function __construct($debug, $tinymceSettings, $tinymceSetup)
     {
@@ -52,17 +52,13 @@ class ViewFrameListener
         $view = $event->getView();
 
         $setup = '';
-        if ($this->tinymceSettings)
-        {
+        if ($this->tinymceSettings) {
             $settings = $this->tinymceSettings;
 
-            if ($this->tinymceSetup)
-            {
+            if ($this->tinymceSetup) {
                 $setup = $this->tinymceSetup;
             }
-        }
-        else
-        {
+        } else {
             $settings = array(
                 'theme' => "advanced",
                 'plugins' => "safari,advlink,searchreplace,contextmenu,paste,noneditable,visualchars,xhtmlxtras",
@@ -85,7 +81,7 @@ class ViewFrameListener
         }
 
         $view
-            ->addScript($event->getRequest()->getBasePath() . '/components/tinymce/scripts/tinymce/tiny_mce' . ($this->debug ? '_src' : '') . '.js')
+            ->addScript('/components/tinymce/scripts/tinymce/tiny_mce' . ($this->debug ? '_src' : '') . '.js')
             ->addInlineScript($script);
     }
 }

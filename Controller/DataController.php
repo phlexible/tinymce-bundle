@@ -17,7 +17,7 @@ use Phlexible\CoreComponent\Controller\Action\Action;
 final class DataController extends Action
 {
     /**
-     * Link action
+     * Link
      */
     public function linkAction()
     {
@@ -25,13 +25,13 @@ final class DataController extends Action
         $language = $this->getParam('language', 'en');
 
         $container = $this->getContainer();
-        $treeManager = $container->elementsTreeManager;
-        $elementsVersionManager = $container->elementsVersionManager;
+        $treeManager = $container->treeManager;
+        $elementService = $container->elementsService;
 
-        $node = $treeManager->getNodeByNodeId($tid);
-        $elementVersion = $elementsVersionManager->getLatest($node->getEid());
-        $title = $elementVersion->getBackendTitle($language);
-        $title .= ' [' . $tid . ']';
+        $node = $treeManager->getByNodeId($tid)->get($tid);
+        $element = $elementService->findElement($node->getTypeId());
+        $elementVersion = $elementService->findLatestElementVersion($element);
+        $title = $elementVersion->getBackendTitle($language) . ' [' . $tid . ']';
 
         $this->_response->setResult(true, $tid, 'Name loaded', array('title' => $title));
     }

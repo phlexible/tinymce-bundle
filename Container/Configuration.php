@@ -18,6 +18,9 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * @return TreeBuilder
+     */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
@@ -50,8 +53,8 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('settings')->end()
-                ->scalarNode('setup')->end()
+                ->scalarNode('settings')->info('TinyMCE settings.')->end()
+                ->scalarNode('setup')->info('TinyMCE setup.')->end()
             ->end();
 
         return $treeBuilder;

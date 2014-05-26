@@ -18,7 +18,7 @@ use Phlexible\CoreComponent\Controller\Action\Action;
 class CssController extends Action
 {
     /**
-     * New action
+     * New CSS
      */
     public function newAction()
     {
@@ -28,7 +28,7 @@ class CssController extends Action
     }
 
     /**
-     * Change action
+     * Change CSS
      */
     public function changeAction()
     {

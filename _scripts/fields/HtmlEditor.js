@@ -127,19 +127,21 @@ Phlexible.fields.FieldTypes.addField('editor', {
         de: 'Editor',
         en: 'Editor'
     },
-    allowedIn: ['tab','accordion','group','referenceroot'],
     iconCls: 'p-tinymce-field_editor-icon',
-    accordions: ['fieldproperties','fieldlabels','fieldconfiguration','fieldvalues','fieldvalidation'],
+    allowedIn: [
+		'tab',
+		'accordion',
+		'group',
+		'referenceroot'
+	],
     defaultValueField: 'default_value_textarea',
     config: {
-        properties: {
-        },
         labels: {
             field: 1,
             box: 0,
             prefix: 1,
             suffix: 1,
-            context: 1
+            help: 1
         },
         configuration: {
             sync: 1,
@@ -147,12 +149,7 @@ Phlexible.fields.FieldTypes.addField('editor', {
             height: 1,
             readonly: 1,
             hide_label: 1,
-            sortable: 0,
-            repeat: 0,
-            group: 0,
-            link: 0,
-            table: 0,
-            accordion: 0
+            sortable: 0
         },
         values: {
             default_text: 0,
