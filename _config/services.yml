@@ -4,20 +4,21 @@ parameters:
 
 services:
     # fields
-    tinymceFieldEditor:
+    tinymce.field.editor:
         class: Phlexible\TinymceComponent\Field\EditorField
         tags:
-            - ["elementtypes.field", {alias: editor}]
+            - {name: "elementtypes.field", alias: editor}
+
     # listeners
-    tinymceListenerViewDefault:
+    tinymce.listener.viewframe:
         class: Phlexible\TinymceComponent\Listener\ViewFrameListener
-        arguments: ["%app.debug%", "%tinymce.settings%", "%tinymce.setup%"]
+        arguments: ["%kernel.debug%", "%tinymce.settings%", "%tinymce.setup%"]
         tags:
-            - ["event.listener", {event: frame.view_frame, method: onViewFrame}]
+            - {name: "event.listener", event: frame.view_frame, method: onViewFrame}
 
     # assets
-    tinymceAssetScripts:
+    tinymce.asset.scripts:
         class: Phlexible\TinymceComponent\Asset\ScriptCollection
         arguments: ["%tinymce.asset.script_path%/"]
         tags:
-            - ["asset.script"]
+            - {name: "asset.script"}

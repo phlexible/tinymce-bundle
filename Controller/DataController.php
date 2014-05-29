@@ -25,8 +25,8 @@ final class DataController extends Action
         $language = $this->getParam('language', 'en');
 
         $container = $this->getContainer();
-        $treeManager = $container->treeManager;
-        $elementService = $container->elementsService;
+        $treeManager = $container->get('tree.manager');
+        $elementService = $container->get('elements.service');
 
         $node = $treeManager->getByNodeId($tid)->get($tid);
         $element = $elementService->findElement($node->getTypeId());

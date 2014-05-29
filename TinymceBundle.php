@@ -11,11 +11,11 @@ namespace Phlexible\TinymceComponent;
 use Phlexible\Component\Component;
 
 /**
- * TinyMce Component
+ * TinyMce bundle
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class TinymceComponent extends Component
+class TinymceBundle extends Component
 {
     public function __construct()
     {

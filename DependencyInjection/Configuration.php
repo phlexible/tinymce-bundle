@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\TinymceComponent\Container;
+namespace Phlexible\TinymceComponent\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -19,7 +19,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
-     * @return TreeBuilder
+     * {@inheritdoc}
      */
     public function getConfigTreeBuilder()
     {

@@ -23,6 +23,8 @@ class ScriptCollection extends AssetCollection
      */
     public function __construct($scriptDir)
     {
+        $scriptDir = rtrim($scriptDir, '/') . '/';
+
         $assets = array(
             new FileAsset($scriptDir . 'ux/Ext.ux.TinyMCE.js'),
 
