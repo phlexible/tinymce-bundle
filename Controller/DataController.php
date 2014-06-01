@@ -7,32 +7,37 @@
  */
 namespace Phlexible\TinymceComponent\Controller;
 
-use Phlexible\CoreComponent\Controller\Action\Action;
+use Phlexible\CoreComponent\Controller\Controller;
+use Phlexible\CoreComponent\Response\ResultResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Data controller
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-final class DataController extends Action
+final class DataController extends Controller
 {
     /**
      * Link
+     *
+     * @param Request $request
+     *
+     * @return ResultResponse
      */
-    public function linkAction()
+    public function linkAction(Request $request)
     {
-        $tid = $this->getParam('tid');
-        $language = $this->getParam('language', 'en');
+        $tid = $request->request->get('tid');
+        $language = $request->request->get('language', 'en');
 
-        $container = $this->getContainer();
-        $treeManager = $container->get('tree.manager');
-        $elementService = $container->get('elements.service');
+        $treeManager = $this->get('tree.manager');
+        $elementService = $this->get('elements.service');
 
         $node = $treeManager->getByNodeId($tid)->get($tid);
         $element = $elementService->findElement($node->getTypeId());
         $elementVersion = $elementService->findLatestElementVersion($element);
         $title = $elementVersion->getBackendTitle($language) . ' [' . $tid . ']';
 
-        $this->_response->setResult(true, $tid, 'Name loaded', array('title' => $title));
+        return new ResultResponse(true, 'Name loaded', array('title' => $title));
     }
 }

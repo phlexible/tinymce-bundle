@@ -9,31 +9,37 @@
 namespace Phlexible\TinymceComponent\Controller;
 
 use Phlexible\CoreComponent\Controller\Action\Action;
+use Phlexible\CoreComponent\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * CSS controller
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class CssController extends Action
+class CssController extends Controller
 {
     /**
      * New CSS
+     *
+     * @return Response
      */
     public function newAction()
     {
-        $this->_response
-            ->setHeader('Content-type', 'text/css')
-            ->setBody('body {background: none #FBB !important;}');
+        $content = 'body {background: none #FBB !important;}';
+
+        return new Response($content, 200, array('Content-type' => 'text/css'));
     }
 
     /**
      * Change CSS
+     *
+     * @return Response
      */
     public function changeAction()
     {
-        $this->_response
-            ->setHeader('Content-type', 'text/css')
-            ->setBody('body {background: none #FBB !important;}');
+        $content = 'body {background: none #FBB !important;}';
+
+        return new Response($content, 200, array('Content-type' => 'text/css'));
     }
 }

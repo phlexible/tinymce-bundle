@@ -8,20 +8,13 @@
 
 namespace Phlexible\TinymceComponent;
 
-use Phlexible\Component\Component;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  * TinyMce bundle
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class TinymceBundle extends Component
+class TinymceBundle extends Bundle
 {
-    public function __construct()
-    {
-        $this
-            ->setVersion('0.7.0')
-            ->setId('tinymce')
-            ->setPackage('phlexible');
-    }
 }

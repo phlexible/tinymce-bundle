@@ -25,14 +25,14 @@ class TinymceExtension extends Extension
      */
     public function load(array $config, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../_config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
         $configuration = $this->getConfiguration($config, $container);
         $config = $this->processConfiguration($configuration, $config);
 
-        $container->setParameter('tinymce.asset.script_path', __DIR__ . '/../_scripts/');
-        $container->setParameter('tinymce.asset.css_path', __DIR__ . '/../_styles/');
+        $container->setParameter('tinymce.asset.script_path', __DIR__ . '/../Resources/scripts/');
+        $container->setParameter('tinymce.asset.css_path', __DIR__ . '/../Resources/styles/');
         $container->setParameter('tinymce.settings', null);
         $container->setParameter('tinymce.setup', null);
 
