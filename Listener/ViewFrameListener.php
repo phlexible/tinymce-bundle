@@ -81,7 +81,7 @@ class ViewFrameListener
         }
 
         $view
-            ->addScript('/components/tinymce/scripts/tinymce/tiny_mce' . ($this->debug ? '_src' : '') . '.js')
+            ->addScript('/bundles/tinymce/scripts/tinymce/tiny_mce' . ($this->debug ? '_src' : '') . '.js')
             ->addInlineScript($script);
     }
 }
