@@ -1,11 +1,11 @@
 tiymce_contentcss_new:
     path: /tinymce/content_css/new
-    defaults: { module: tinymce, controller: css, action: new, _controller: TinymceBundle:css:new }
+    defaults: { _controller: TinymceBundle:Css:new }
 
 tiymce_contentcss_change:
     path: /tinymce/content_css/change
-    defaults: { module: tinymce, controller: css, action: change, _controller: TinymceBundle:css:change }
+    defaults: { _controller: TinymceBundle:Css:change }
 
 tiymce_data:
     path: /tinymce/data/link
-    defaults: { module: tinymce, controller: data, action: link, _controller: TinymceBundle:data:link }
+    defaults: { _controller: TinymceBundle:Data:link }
