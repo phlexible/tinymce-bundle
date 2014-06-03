@@ -18,7 +18,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class TinymceExtension extends Extension
+class PhlexibleTinymceExtension extends Extension
 {
     /**
      * {@inheritdoc}

@@ -9,14 +9,16 @@ namespace Phlexible\TinymceComponent\Controller;
 
 use Phlexible\CoreComponent\Controller\Controller;
 use Phlexible\CoreComponent\Response\ResultResponse;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Data controller
  *
  * @author Stephan Wentz <sw@brainbits.net>
+ * @Route("/tinymce/data")
  */
-final class DataController extends Controller
+class DataController extends Controller
 {
     /**
      * Link
@@ -24,6 +26,7 @@ final class DataController extends Controller
      * @param Request $request
      *
      * @return ResultResponse
+     * @Route("/link", name="tiymce_data_link")
      */
     public function linkAction(Request $request)
     {

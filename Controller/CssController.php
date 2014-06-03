@@ -8,14 +8,15 @@
 
 namespace Phlexible\TinymceComponent\Controller;
 
-use Phlexible\CoreComponent\Controller\Action\Action;
 use Phlexible\CoreComponent\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * CSS controller
  *
  * @author Stephan Wentz <sw@brainbits.net>
+ * @Route("/tinymce/css")
  */
 class CssController extends Controller
 {
@@ -23,6 +24,7 @@ class CssController extends Controller
      * New CSS
      *
      * @return Response
+     * @Route("/new", name="tinymce_css_new")
      */
     public function newAction()
     {
@@ -35,6 +37,7 @@ class CssController extends Controller
      * Change CSS
      *
      * @return Response
+     * @Route("/change", name="tinymce_css_change")
      */
     public function changeAction()
     {
