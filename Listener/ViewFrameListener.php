@@ -8,7 +8,7 @@
 
 namespace Phlexible\TinymceComponent\Listener;
 
-use Phlexible\FrameComponent\Event\ViewEvent;
+use Phlexible\GuiComponent\Event\ViewEvent;
 
 /**
  * View frame listener
@@ -81,7 +81,7 @@ class ViewFrameListener
         }
 
         $view
-            ->addScript('/bundles/tinymce/scripts/tinymce/tiny_mce' . ($this->debug ? '_src' : '') . '.js')
+            ->addScript('/bundles/phlexibletinymce/scripts/tinymce/tiny_mce' . ($this->debug ? '_src' : '') . '.js')
             ->addInlineScript($script);
     }
 }

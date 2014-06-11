@@ -8,7 +8,7 @@
 namespace Phlexible\TinymceComponent\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Phlexible\CoreComponent\Response\ResultResponse;
+use Phlexible\GuiComponent\Response\ResultResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
