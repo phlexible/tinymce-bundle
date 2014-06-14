@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\TinymceComponent\Listener;
+namespace Phlexible\TinymceComponent\EventListener;
 
 use Phlexible\GuiComponent\Event\ViewEvent;
 

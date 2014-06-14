@@ -11,7 +11,7 @@ services:
 
     # listeners
     tinymce.listener.viewframe:
-        class: Phlexible\TinymceComponent\Listener\ViewFrameListener
+        class: Phlexible\TinymceComponent\EventListener\ViewFrameListener
         arguments: ["%kernel.debug%", "%tinymce.settings%", "%tinymce.setup%"]
         tags:
             - {name: "kernel.event_listener", event: gui.view_frame, method: onViewFrame}
