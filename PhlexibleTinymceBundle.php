@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\TinymceComponent;
+namespace Phlexible\TinymceBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

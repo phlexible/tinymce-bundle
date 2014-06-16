@@ -6,9 +6,9 @@
  * @license   proprietary
  */
 
-namespace Phlexible\TinymceComponent\Field;
+namespace Phlexible\TinymceBundle\Field;
 
-use Phlexible\ElementtypesComponent\Field\TextareaField;
+use Phlexible\ElementtypeBundle\Field\TextareaField;
 
 /**
  * Tiny MCE field

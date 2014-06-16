@@ -5,10 +5,10 @@
  * @copyright 2007-2013 brainbits GmbH (http://www.brainbits.net)
  * @license   proprietary
  */
-namespace Phlexible\TinymceComponent\Controller;
+namespace Phlexible\TinymceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Phlexible\GuiComponent\Response\ResultResponse;
+use Phlexible\GuiBundle\Response\ResultResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 

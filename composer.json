@@ -1,10 +1,12 @@
 {
-    "name": "phlexible/tinymce-component",
-    "description": "phlexible.cms tinymce component",
+    "name": "phlexible/tinymce-bundle",
+    "description": "phlexible tinymce bundle",
     "license": "proprietary",
+	"type": "symfony-bundle",
+	"keywords": ["tinymce", "editor", "rich text"],
     "autoload": {
         "psr-4": {
-            "Phlexible\\TinymceComponent\\": ""
+            "Phlexible\\TinymceBundle\\": ""
         }
     },
     "require": {

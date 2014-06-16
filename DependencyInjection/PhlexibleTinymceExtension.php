@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\TinymceComponent\DependencyInjection;
+namespace Phlexible\TinymceBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -31,8 +31,6 @@ class PhlexibleTinymceExtension extends Extension
         $configuration = $this->getConfiguration($config, $container);
         $config = $this->processConfiguration($configuration, $config);
 
-        $container->setParameter('tinymce.asset.script_path', __DIR__ . '/../Resources/scripts/');
-        $container->setParameter('tinymce.asset.css_path', __DIR__ . '/../Resources/styles/');
         $container->setParameter('tinymce.settings', null);
         $container->setParameter('tinymce.setup', null);
 

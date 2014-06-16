@@ -3,22 +3,22 @@ parameters:
     tinymce.setup: ~
 
 services:
-    # fields
-    tinymce.field.editor:
-        class: Phlexible\TinymceComponent\Field\EditorField
+    # asset providers
+    tinymce.asset_provider:
+        class: Phlexible\TinymceBundle\AssetProvider\TinymceAssetProvider
+        arguments: [@file_locator]
         tags:
-            - {name: "elementtypes.field", alias: editor}
+            - {name: "asset.provider"}
 
-    # listeners
+    # event listeners
     tinymce.listener.viewframe:
-        class: Phlexible\TinymceComponent\EventListener\ViewFrameListener
+        class: Phlexible\TinymceBundle\EventListener\ViewFrameListener
         arguments: ["%kernel.debug%", "%tinymce.settings%", "%tinymce.setup%"]
         tags:
             - {name: "kernel.event_listener", event: gui.view_frame, method: onViewFrame}
 
-    # assets
-    tinymce.asset.scripts:
-        class: Phlexible\TinymceComponent\Asset\ScriptCollection
-        arguments: ["%tinymce.asset.script_path%/"]
+    # fields
+    tinymce.field.editor:
+        class: Phlexible\TinymceBundle\Field\EditorField
         tags:
-            - {name: "asset.script"}
+            - {name: "elementtypes.field", alias: editor}
