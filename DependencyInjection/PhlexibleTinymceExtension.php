@@ -31,14 +31,14 @@ class PhlexibleTinymceExtension extends Extension
         $configuration = $this->getConfiguration($config, $container);
         $config = $this->processConfiguration($configuration, $config);
 
-        $container->setParameter('tinymce.settings', null);
-        $container->setParameter('tinymce.setup', null);
+        $container->setParameter('phlexible_tinymce.settings', null);
+        $container->setParameter('phlexible_tinymce.setup', null);
 
         if (!empty($config['settings'])) {
-            $container->setParameter('tinymce.settings', $config['settings']);
+            $container->setParameter('phlexible_tinymce.settings', $config['settings']);
 
             if (!empty($config['setup'])) {
-                $container->setParameter('tinymce.setup', $config['setup']);
+                $container->setParameter('phlexible_tinymce.setup', $config['setup']);
             }
         }
     }

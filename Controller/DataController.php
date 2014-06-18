@@ -33,8 +33,8 @@ class DataController extends Controller
         $tid = $request->request->get('tid');
         $language = $request->request->get('language', 'en');
 
-        $treeManager = $this->get('tree.manager');
-        $elementService = $this->get('elements.service');
+        $treeManager = $this->get('phlexible_tree.manager');
+        $elementService = $this->get('phlexible_element.service');
 
         $node = $treeManager->getByNodeId($tid)->get($tid);
         $element = $elementService->findElement($node->getTypeId());

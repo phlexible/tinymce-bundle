@@ -1,24 +1,24 @@
 parameters:
-    tinymce.settings: ~
-    tinymce.setup: ~
+    phlexible_tinymce.settings: ~
+    phlexible_tinymce.setup: ~
 
 services:
     # asset providers
-    tinymce.asset_provider:
+    phlexible_tinymce.asset_provider:
         class: Phlexible\TinymceBundle\AssetProvider\TinymceAssetProvider
         arguments: [@file_locator]
         tags:
-            - {name: "asset.provider"}
+            - {name: phlexible_gui.asset.provider}
 
     # event listeners
-    tinymce.listener.viewframe:
+    phlexible_tinymce.listener.view_frame:
         class: Phlexible\TinymceBundle\EventListener\ViewFrameListener
-        arguments: ["%kernel.debug%", "%tinymce.settings%", "%tinymce.setup%"]
+        arguments: [%kernel.debug%, %phlexible_tinymce.settings%, %phlexible_tinymce.setup%]
         tags:
-            - {name: "kernel.event_listener", event: gui.view_frame, method: onViewFrame}
+            - {name: kernel.event_listener, event: phlexible_gui.view_frame, method: onViewFrame}
 
     # fields
-    tinymce.field.editor:
+    phlexible_tinymce.field.editor:
         class: Phlexible\TinymceBundle\Field\EditorField
         tags:
-            - {name: "elementtypes.field", alias: editor}
+            - {name: phlexible_elementtype.field, alias: editor}

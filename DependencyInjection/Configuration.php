@@ -24,7 +24,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('tinymce');
+        $rootNode = $treeBuilder->root('phlexible_tinymce');
 
         /*
         $config['tinymce']['settings'] = array(
