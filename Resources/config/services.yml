@@ -6,6 +6,7 @@ services:
     # asset providers
     phlexible_tinymce.asset_provider:
         class: Phlexible\TinymceBundle\AssetProvider\TinymceAssetProvider
+        public: false
         arguments: [@file_locator]
         tags:
             - {name: phlexible_gui.asset.provider}
@@ -20,5 +21,6 @@ services:
     # fields
     phlexible_tinymce.field.editor:
         class: Phlexible\TinymceBundle\Field\EditorField
+        public: false
         tags:
             - {name: phlexible_elementtype.field, alias: editor}
