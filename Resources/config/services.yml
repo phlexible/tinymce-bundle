@@ -5,7 +5,7 @@ parameters:
 services:
     # asset providers
     phlexible_tinymce.asset_provider:
-        class: Phlexible\TinymceBundle\AssetProvider\TinymceAssetProvider
+        class: Phlexible\Bundle\TinymceBundle\AssetProvider\TinymceAssetProvider
         public: false
         arguments: [@file_locator]
         tags:
@@ -13,14 +13,14 @@ services:
 
     # event listeners
     phlexible_tinymce.listener.view_frame:
-        class: Phlexible\TinymceBundle\EventListener\ViewFrameListener
+        class: Phlexible\Bundle\TinymceBundle\EventListener\ViewFrameListener
         arguments: [%kernel.debug%, %phlexible_tinymce.settings%, %phlexible_tinymce.setup%]
         tags:
             - {name: kernel.event_listener, event: phlexible_gui.view_frame, method: onViewFrame}
 
     # fields
     phlexible_tinymce.field.editor:
-        class: Phlexible\TinymceBundle\Field\EditorField
+        class: Phlexible\Bundle\TinymceBundle\Field\EditorField
         public: false
         tags:
             - {name: phlexible_elementtype.field, alias: editor}

@@ -6,9 +6,9 @@
  * @license   proprietary
  */
 
-namespace Phlexible\TinymceBundle\EventListener;
+namespace Phlexible\Bundle\TinymceBundle\EventListener;
 
-use Phlexible\GuiBundle\Event\ViewEvent;
+use Phlexible\Bundle\GuiBundle\Event\ViewEvent;
 
 /**
  * View frame listener

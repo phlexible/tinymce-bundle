@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\TinymceBundle\DependencyInjection;
+namespace Phlexible\Bundle\TinymceBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

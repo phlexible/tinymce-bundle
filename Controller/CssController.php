@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\TinymceBundle\Controller;
+namespace Phlexible\Bundle\TinymceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
