@@ -57,11 +57,7 @@ Phlexible.tinymce.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
 });
 Ext.reg('tinymce-field-editor', Phlexible.tinymce.HtmlEditor);
 
-Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valueStructure, pos, element, repeatablePostfix, forceAdd) {
-	if (element.master) {
-		element.prototypes.addFieldPrototype(item);
-	}
-
+Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valueStructure, element, repeatableId) {
 	element.prototypes.incCount(item.dsId);
 
 	var isMaster = element.master;
@@ -105,7 +101,7 @@ Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valu
 	tinymceSettings.readonly = tinymceReadonly;
 	tinymceSettings.phlx_element = element;
 
-	var config = Phlexible.fields.FieldHelper.defaults(parentConfig, item, element, repeatablePostfix, forceAdd);
+	var config = Phlexible.fields.FieldHelper.defaults(parentConfig, item, element, repeatableId);
 
 	Ext.apply(config, {
 		xtype: 'tinymce-field-editor',
@@ -118,6 +114,12 @@ Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valu
 		//supportsDiff: true,
 		supportsUnlink: true
 	});
+
+    Ext.each(valueStructure.values, function (value) {
+        if (value.dsId === item.dsId) {
+            config.value = value.content;
+        }
+    });
 
 	return config;
 });
