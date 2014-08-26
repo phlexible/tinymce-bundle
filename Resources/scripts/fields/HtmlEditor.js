@@ -101,7 +101,7 @@ Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valu
 	tinymceSettings.readonly = tinymceReadonly;
 	tinymceSettings.phlx_element = element;
 
-	var config = Phlexible.fields.FieldHelper.defaults(parentConfig, item, element, repeatableId);
+    var config = Phlexible.fields.FieldHelper.defaults(parentConfig, item, valueStructure, element, repeatableId);
 
 	Ext.apply(config, {
 		xtype: 'tinymce-field-editor',
@@ -114,12 +114,6 @@ Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valu
 		//supportsDiff: true,
 		supportsUnlink: true
 	});
-
-    Ext.each(valueStructure.values, function (value) {
-        if (value.dsId === item.dsId) {
-            config.value = value.content;
-        }
-    });
 
 	return config;
 });
