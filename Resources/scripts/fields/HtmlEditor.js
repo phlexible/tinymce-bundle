@@ -58,8 +58,6 @@ Phlexible.tinymce.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
 Ext.reg('tinymce-field-editor', Phlexible.tinymce.HtmlEditor);
 
 Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valueStructure, element, repeatableId) {
-	element.prototypes.incCount(item.dsId);
-
 	var isMaster = element.master;
 	var isSynchronized = (item.configuration['synchronized'] === 'synchronized' || item.configuration['synchronized'] === 'synchronized_unlink');
 
