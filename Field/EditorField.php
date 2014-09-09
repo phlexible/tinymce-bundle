@@ -17,6 +17,11 @@ use Phlexible\Bundle\ElementtypeBundle\Field\TextareaField;
  */
 class EditorField extends TextareaField
 {
-    const TYPE = 'editor';
-    public $icon = 'p-tinymce-field_editor-icon';
+    /**
+     * {@inheritdoc}
+     */
+    public function getIcon()
+    {
+        return 'p-elementtype-field_editor-icon';
+    }
 }
