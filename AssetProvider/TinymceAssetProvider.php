@@ -61,7 +61,7 @@ class TinymceAssetProvider implements AssetProviderInterface
 
             new FileAsset($this->locator->locate('@PhlexibleTinymceBundle/Resources/scripts/configuration/FieldConfigurationTinymce.js')),
 
-            new FileAsset($this->locator->locate('@PhlexibleTinymceBundle/Resources/scripts/fields/HtmlEditor.js')),
+            new FileAsset($this->locator->locate('@PhlexibleTinymceBundle/Resources/scripts/field/HtmlEditor.js')),
         ));
 
         return $collection;

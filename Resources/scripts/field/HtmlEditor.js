@@ -138,6 +138,7 @@ Phlexible.fields.FieldTypes.addField('editor', {
             help: 1
         },
         configuration: {
+            required: 1,
             sync: 1,
             width: 1,
             height: 1,
@@ -162,7 +163,6 @@ Phlexible.fields.FieldTypes.addField('editor', {
             text: 0
         },
         validation: {
-            required: 1,
             text: 1,
             numeric: 0,
             content: 1
