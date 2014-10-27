@@ -7,9 +7,8 @@ services:
     phlexible_tinymce.asset_provider:
         class: Phlexible\Bundle\TinymceBundle\AssetProvider\TinymceAssetProvider
         public: false
-        arguments: [@file_locator]
         tags:
-            - {name: phlexible_gui.asset.provider}
+            - {name: phlexible_gui.asset_provider}
 
     # event listeners
     phlexible_tinymce.listener.view_frame:
