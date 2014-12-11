@@ -22,7 +22,9 @@ class TinymceAssetProvider implements AssetProviderInterface
      */
     public function getUxScriptsCollection()
     {
-        return null;
+        return array(
+
+        );
     }
 
     /**
@@ -39,7 +41,7 @@ class TinymceAssetProvider implements AssetProviderInterface
     public function getScriptsCollection()
     {
         return array(
-            '@PhlexibleTinymceBundle/Resources/scripts/ux/Ext.ux.TinyMCE.js',
+            '@PhlexibleTinymceBundle/Resources/scripts-ux/Ext.ux.TinyMCE.js',
 
             '@PhlexibleTinymceBundle/Resources/scripts/Definitions.js',
 
