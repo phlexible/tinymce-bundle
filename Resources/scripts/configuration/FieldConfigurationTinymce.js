@@ -1,4 +1,6 @@
-Phlexible.elementtypes.configuration.FieldConfigurationTinymce = Ext.extend(Ext.form.FieldSet, {
+Ext.ns('Phlexible.tinymce.configuration');
+
+Phlexible.tinymce.configuration.FieldConfigurationTinymce = Ext.extend(Ext.form.FieldSet, {
     title: 'TinyMCE',
 	strings: Phlexible.tinymce.Strings,
     iconCls: 'p-tinymce-field_editor-icon',
@@ -132,4 +134,4 @@ Phlexible.elementtypes.configuration.FieldConfigurationTinymce = Ext.extend(Ext.
 	}
 });
 
-Ext.reg('tinymce-configuration-field-configuration-tinymce', Phlexible.elementtypes.configuration.FieldConfigurationTinymce);
+Ext.reg('tinymce-configuration-field-configuration-tinymce', Phlexible.tinymce.configuration.FieldConfigurationTinymce);

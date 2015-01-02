@@ -1,3 +1,5 @@
+Ext.ns('Phlexible.tinymce');
+
 Phlexible.tinymce.HtmlEditor = Ext.extend(Ext.ux.TinyMCE, {
     hideMode: 'offsets',
 
