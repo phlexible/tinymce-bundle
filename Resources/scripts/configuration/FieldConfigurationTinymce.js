@@ -78,7 +78,7 @@ Phlexible.tinymce.configuration.FieldConfigurationTinymce = Ext.extend(Ext.form.
 			scope: this
 		});
 
-        Phlexible.elementtypes.configuration.FieldConfigurationTinymce.superclass.initComponent.call(this);
+		Phlexible.tinymce.configuration.FieldConfigurationTinymce.superclass.initComponent.call(this);
     },
 
 	updateVisibility: function(type) {
