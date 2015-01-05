@@ -3,13 +3,6 @@ parameters:
     phlexible_tinymce.setup: ~
 
 services:
-    # asset providers
-    phlexible_tinymce.asset_provider:
-        class: Phlexible\Bundle\TinymceBundle\AssetProvider\TinymceAssetProvider
-        public: false
-        tags:
-            - {name: phlexible_gui.asset_provider}
-
     # event listeners
     phlexible_tinymce.listener.view_frame:
         class: Phlexible\Bundle\TinymceBundle\EventListener\ViewFrameListener
