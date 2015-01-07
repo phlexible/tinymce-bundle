@@ -1,4 +1,0 @@
-require:
-    - field/HtmlEditor
-    - configuration/FieldConfigurationTinymce
-    - sequences

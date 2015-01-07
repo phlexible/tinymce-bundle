@@ -1,4 +1,4 @@
-Ext.ns('Phlexible.tinymce.configuration');
+Ext.provide('Phlexible.tinymce.configuration.FieldConfigurationTinymce');
 
 Phlexible.tinymce.configuration.FieldConfigurationTinymce = Ext.extend(Ext.form.FieldSet, {
     title: 'TinyMCE',

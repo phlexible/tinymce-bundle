@@ -1,6 +1,5 @@
 {
     "resources": {
-        "/phlexible/scripts-ux/tinymce": "Resources/scripts-ux",
         "/phlexible/scripts/tinymce": "Resources/scripts"
     }
 }

@@ -13,6 +13,8 @@
     License: LGPLv2.1 or later
 */
 
+Ext.provide('Ext.ux.TinyMCE');
+
 (function() {
 
     Ext.namespace( "Ext.ux" );
