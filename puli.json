@@ -1,5 +1,6 @@
 {
     "resources": {
+        "/phlexible/icons/tinymce": "Resources/public/icons",
         "/phlexible/scripts/tinymce": "Resources/scripts"
     }
 }
