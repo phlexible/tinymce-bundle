@@ -1,7 +1,7 @@
 Ext.require('Phlexible.fields.Registry');
 Ext.require('Phlexible.fields.FieldTypes');
 Ext.require('Phlexible.fields.FieldHelper');
-Ext.provide('Phlexible.tinymce.field.HtmlEditor');
+Ext.require('Phlexible.tinymce.field.HtmlEditor');
 
 Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valueStructure, element, repeatableId) {
 	var isMaster = element.master;
