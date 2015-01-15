@@ -1,7 +1,18 @@
 {
     "version": "1.0",
+    "name": "phlexible/tinymce-bundle",
     "resources": {
-        "/phlexible/icons/phlexibletinymce": "Resources/public/icons",
-        "/phlexible/scripts/phlexibletinymce": "Resources/scripts"
+        "/phlexible/phlexibletinymce/icons": "Resources/public/icons",
+        "/phlexible/phlexibletinymce/scripts": "Resources/scripts"
+    },
+    "bindings": {
+        "c8b5c408-e9f2-5cdc-b81b-1c87f7148746": {
+            "query": "/phlexible/phlexibletinymce/icons",
+            "type": "phlexible/icons"
+        },
+        "b7807f0e-d2ed-5d27-ac1c-169795f687e4": {
+            "query": "/phlexible/phlexibletinymce/scripts",
+            "type": "phlexible/scripts"
+        }
     }
 }
