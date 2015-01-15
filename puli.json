@@ -7,11 +7,11 @@
     },
     "bindings": {
         "c8b5c408-e9f2-5cdc-b81b-1c87f7148746": {
-            "query": "/phlexible/phlexibletinymce/icons",
+            "query": "/phlexible/phlexibletinymce/icons/*.png",
             "type": "phlexible/icons"
         },
         "b7807f0e-d2ed-5d27-ac1c-169795f687e4": {
-            "query": "/phlexible/phlexibletinymce/scripts",
+            "query": "/phlexible/phlexibletinymce/scripts/*.js",
             "type": "phlexible/scripts"
         }
     }
