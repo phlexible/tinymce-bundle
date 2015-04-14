@@ -7,7 +7,7 @@
     },
     "bindings": {
         "b7807f0e-d2ed-5d27-ac1c-169795f687e4": {
-            "query": "/phlexible/phlexibletinymce/scripts/**.js",
+            "query": "/phlexible/phlexibletinymce/scripts/**/*.js",
             "type": "phlexible/scripts"
         },
         "38a69620-cbb2-533e-85a3-30b703c1595c": {
