@@ -53,7 +53,10 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('settings')->info('TinyMCE settings.')->end()
+                ->arrayNode('settings')
+                    ->info('TinyMCE settings.')
+                    ->prototype('scalar')->end()
+                ->end()
                 ->scalarNode('setup')->info('TinyMCE setup.')->end()
             ->end();
 
