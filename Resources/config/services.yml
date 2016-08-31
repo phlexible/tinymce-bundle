@@ -6,7 +6,11 @@ services:
     # event listeners
     phlexible_tinymce.listener.view_frame:
         class: Phlexible\Bundle\TinymceBundle\EventListener\ViewFrameListener
-        arguments: [%kernel.debug%, %phlexible_tinymce.settings%, %phlexible_tinymce.setup%]
+        arguments:
+            - "@templating.helper.assets"
+            - "%kernel.debug%"
+            - "%phlexible_tinymce.settings%"
+            - "%phlexible_tinymce.setup%"
         tags:
             - {name: kernel.event_listener, event: phlexible_gui.view_frame, method: onViewFrame}
 

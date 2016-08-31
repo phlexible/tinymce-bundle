@@ -9,6 +9,7 @@
 namespace Phlexible\Bundle\TinymceBundle\EventListener;
 
 use Phlexible\Bundle\GuiBundle\Event\ViewEvent;
+use Symfony\Bundle\FrameworkBundle\Templating\Helper\AssetsHelper;
 
 /**
  * View frame listener
@@ -17,6 +18,11 @@ use Phlexible\Bundle\GuiBundle\Event\ViewEvent;
  */
 class ViewFrameListener
 {
+    /**
+     * @var AssetsHelper
+     */
+    private $assetsHelper;
+
     /**
      * @var bool
      */
@@ -33,12 +39,14 @@ class ViewFrameListener
     private $tinymceSetup;
 
     /**
-     * @param bool   $debug
-     * @param string $tinymceSettings
-     * @param string $tinymceSetup
+     * @param AssetsHelper $assetsHelper
+     * @param bool         $debug
+     * @param string       $tinymceSettings
+     * @param string       $tinymceSetup
      */
-    public function __construct($debug, $tinymceSettings, $tinymceSetup)
+    public function __construct(AssetsHelper $assetsHelper, $debug, $tinymceSettings, $tinymceSetup)
     {
+        $this->assetsHelper = $assetsHelper;
         $this->debug = $debug;
         $this->tinymceSettings = $tinymceSettings;
         $this->tinymceSetup = $tinymceSetup;
@@ -81,7 +89,7 @@ class ViewFrameListener
         }
 
         $view
-            ->addScript('/bundles/phlexibletinymce/scripts/tinymce/tiny_mce' . ($this->debug ? '_src' : '') . '.js')
+            ->addScript($this->assetsHelper->getUrl('/bundles/phlexibletinymce/scripts/tinymce/tiny_mce' . ($this->debug ? '_src' : '') . '.js'))
             ->addInlineScript($script);
     }
 }
