@@ -4,15 +4,10 @@ Ext.require('Phlexible.fields.FieldHelper');
 Ext.require('Phlexible.tinymce.field.HtmlEditor');
 
 Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valueStructure, element, repeatableId) {
-	var isMaster = element.master;
-	var isSynchronized = (item.configuration['synchronized'] === 'synchronized' || item.configuration['synchronized'] === 'synchronized_unlink');
-
-	var tinymceReadonly = (isSynchronized && !isMaster) || false;
-
-	//plugins: "safari,style,layer,table,advimage,advlink,iespell,insertdatetime,preview,media,searchreplace,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
-	var tinymceSettings = item.configuration.tinymce_config_override && item.configuration.tinymce_config
-		? Ext.decode(item.configuration.tinymce_config)
-		: Phlexible.clone(window.tinymceSettings);
+	var config = Phlexible.fields.FieldHelper.defaults(parentConfig, item, valueStructure, element, repeatableId),
+	    tinymceSettings = item.configuration.tinymce_config_override && item.configuration.tinymce_config
+		    ? Ext.decode(item.configuration.tinymce_config)
+		    : Phlexible.clone(window.tinymceSettings);
 
 	if (item.diff) {
 		switch (item.diff.type) {
@@ -26,26 +21,8 @@ Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valu
 		}
 	}
 
-	/*
-	 {
-	 theme: "advanced",
-	 plugins: "safari,advlink,searchreplace,contextmenu,paste,noneditable,visualchars,xhtmlxtras",
-	 theme_advanced_buttons1: "code,|,cut,copy,paste,pastetext,pasteword,|,removeformat,cleanup,|,search,replace,|,undo,redo",
-	 theme_advanced_buttons2: "bold,italic,|,sub,sup,|,blockquote,cite,abbr,acronym,|,visualchars,|,charmap,|,bullist,numlist,|,link,unlink",
-	 theme_advanced_buttons3: "",
-	 theme_advanced_buttons4: "",
-	 theme_advanced_toolbar_location: "top",
-	 theme_advanced_toolbar_align: "left",
-	 theme_advanced_statusbar_location: "bottom",
-	 theme_advanced_resizing: false,
-	 extended_valid_elements: "a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]",
-	 template_external_list_url: "example_template_list.js"
-	 };
-	 */
-	tinymceSettings.readonly = tinymceReadonly;
+	//tinymceSettings.readonly = (config.isSynchronized && !config.isMaster) || false;
 	tinymceSettings.phlx_element = element;
-
-    var config = Phlexible.fields.FieldHelper.defaults(parentConfig, item, valueStructure, element, repeatableId);
 
 	Ext.apply(config, {
 		xtype: 'tinymce-field-editor',
@@ -56,7 +33,18 @@ Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valu
 		supportsPrefix: true,
 		supportsSuffix: true,
 		//supportsDiff: true,
-		supportsUnlink: true
+		supportsUnlink: true,
+		onUnlink: function(c) {
+			c.ed.getBody().setAttribute('contenteditable', true);
+		},
+		onRelink: function(c) {
+			c.ed.getBody().setAttribute('contenteditable', false);
+		},
+        onApplyUnlink: function(c) {
+            if (c.hasUnlink && !c.isUnlinked) {
+                c.ed.getBody().setAttribute('contenteditable', false);
+            }
+        }
 	});
 
 	return config;
