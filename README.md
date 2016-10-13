@@ -6,8 +6,6 @@ The PhlexibleTinymceBundle adds support for country-based content support in phl
 Installation
 ------------
 
-Installation is a 3 step process:
-
 1. Download PhlexibleTinymceBundle using composer
 2. Enable the Bundle
 3. Clear the symfony cache
