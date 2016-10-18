@@ -2,15 +2,15 @@
     "name": "phlexible/tinymce-bundle",
     "description": "phlexible tinymce bundle",
     "license": "proprietary",
-	"type": "symfony-bundle",
-	"keywords": ["tinymce", "editor", "rich text"],
+    "type": "symfony-bundle",
+    "keywords": ["tinymce", "editor", "rich text"],
     "autoload": {
         "psr-4": {
             "Phlexible\\Bundle\\TinymceBundle\\": ""
         }
     },
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.6.0",
         "phlexible/gui-bundle": "~1.0"
     },
     "require-dev": {
@@ -19,15 +19,9 @@
         "symfony/dependency-injection": "~2.3",
         "symfony/http-kernel": "~2.3"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.brainbits.net/repo/private/"
-        }
-    ],
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "1.1-dev"
         }
     },
     "minimum-stability": "dev",
