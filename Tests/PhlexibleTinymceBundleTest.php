@@ -14,7 +14,7 @@ namespace Phlexible\Bundle\TinymceBundle\Tests;
 use Phlexible\Bundle\TinymceBundle\PhlexibleTinymceBundle;
 
 /**
- * Tinymce bundle test
+ * Tinymce bundle test.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */

@@ -14,7 +14,7 @@ namespace Phlexible\Bundle\TinymceBundle\Field;
 use Phlexible\Bundle\ElementtypeBundle\Field\TextareaField;
 
 /**
- * Tiny MCE field
+ * Tiny MCE field.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
