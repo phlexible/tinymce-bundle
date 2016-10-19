@@ -14,7 +14,7 @@ namespace Phlexible\Bundle\TinymceBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * TinyMce bundle
+ * TinyMce bundle.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */

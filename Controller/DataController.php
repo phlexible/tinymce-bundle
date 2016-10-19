@@ -11,13 +11,13 @@
 
 namespace Phlexible\Bundle\TinymceBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Phlexible\Bundle\GuiBundle\Response\ResultResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Data controller
+ * Data controller.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  * @Route("/tinymce/data")
@@ -25,7 +25,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DataController extends Controller
 {
     /**
-     * Link
+     * Link.
      *
      * @param Request $request
      *
@@ -43,7 +43,7 @@ class DataController extends Controller
         $node = $treeManager->getByNodeId($tid)->get($tid);
         $element = $elementService->findElement($node->getTypeId());
         $elementVersion = $elementService->findLatestElementVersion($element);
-        $title = $elementVersion->getBackendTitle($language) . ' [' . $tid . ']';
+        $title = $elementVersion->getBackendTitle($language).' ['.$tid.']';
 
         return new ResultResponse(true, 'Name loaded', array('title' => $title));
     }
