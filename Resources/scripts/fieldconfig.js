@@ -41,7 +41,7 @@ Phlexible.fields.Registry.addFactory('editor', function(parentConfig, item, valu
 			c.ed.getBody().setAttribute('contenteditable', false);
 		},
         onApplyUnlink: function(c) {
-            if (c.hasUnlink && !c.isUnlinked) {
+            if (!c.isMaster && c.hasUnlink && !c.isUnlinked) {
                 c.ed.getBody().setAttribute('contenteditable', false);
             }
         }
