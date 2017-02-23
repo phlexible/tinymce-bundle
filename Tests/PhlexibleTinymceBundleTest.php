@@ -12,13 +12,14 @@
 namespace Phlexible\Bundle\TinymceBundle\Tests;
 
 use Phlexible\Bundle\TinymceBundle\PhlexibleTinymceBundle;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Tinymce bundle test.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class PhlexibleTinymceBundleTest extends \PHPUnit_Framework_TestCase
+class PhlexibleTinymceBundleTest extends TestCase
 {
     public function testBundle()
     {

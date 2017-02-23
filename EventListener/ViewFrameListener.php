@@ -63,18 +63,18 @@ class ViewFrameListener
         $view = $event->getView();
 
         $settings = array(
-            'theme' => "advanced",
-            'plugins' => "safari,advlink,searchreplace,contextmenu,paste,noneditable,visualchars,xhtmlxtras",
-            'theme_advanced_buttons1' => "code,|,cut,copy,paste,pastetext,pasteword,|,removeformat,cleanup,|,search,replace,|,undo,redo",
-            'theme_advanced_buttons2' => "bold,italic,|,sub,sup,|,blockquote,cite,abbr,acronym,|,visualchars,|,charmap,|,bullist,numlist,|,link,unlink",
-            'theme_advanced_buttons3' => "",
-            'theme_advanced_buttons4' => "",
-            'theme_advanced_toolbar_location' => "top",
-            'theme_advanced_toolbar_align' => "left",
-            'theme_advanced_statusbar_location' => "bottom",
+            'theme' => 'advanced',
+            'plugins' => 'safari,advlink,searchreplace,contextmenu,paste,noneditable,visualchars,xhtmlxtras',
+            'theme_advanced_buttons1' => 'code,|,cut,copy,paste,pastetext,pasteword,|,removeformat,cleanup,|,search,replace,|,undo,redo',
+            'theme_advanced_buttons2' => 'bold,italic,|,sub,sup,|,blockquote,cite,abbr,acronym,|,visualchars,|,charmap,|,bullist,numlist,|,link,unlink',
+            'theme_advanced_buttons3' => '',
+            'theme_advanced_buttons4' => '',
+            'theme_advanced_toolbar_location' => 'top',
+            'theme_advanced_toolbar_align' => 'left',
+            'theme_advanced_statusbar_location' => 'bottom',
             'theme_advanced_resizing' => false,
-            'extended_valid_elements' => "a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]",
-            'template_external_list_url' => "example_template_list.js"
+            'extended_valid_elements' => 'a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]',
+            'template_external_list_url' => 'example_template_list.js'
         );
 
         $setup = '';
