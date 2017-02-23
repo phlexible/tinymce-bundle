@@ -18,6 +18,8 @@ use PHPUnit\Framework\TestCase;
  * Tinymce bundle test.
  *
  * @author Stephan Wentz <sw@brainbits.net>
+ *
+ * @covers \Phlexible\Bundle\TinymceBundle\PhlexibleTinymceBundle
  */
 class PhlexibleTinymceBundleTest extends TestCase
 {
